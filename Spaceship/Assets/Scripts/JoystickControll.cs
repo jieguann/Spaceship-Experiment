@@ -2,18 +2,25 @@
 using UnityEngine;
 
 public class JoystickControll : MonoBehaviour
-{   public GameObject spaceship;
+{   //public GameObject spaceship;
+    public GameManager gameManager;
+    public Rigidbody spaceship;
+
 
     public Transform topOfJoystick;
     public Quaternion originalJoystick;
     private float forwardBackwardTiltMax;
-    [SerializeField]
-    private float forwardBackwardTilt = 0;
+    
+    public float forwardBackwardTilt = 0;
+    private float forwardBackwardTiltNormalnized;
+
     [SerializeField]
     private float sideToSideTilt = 0;
-
+    
     private void Start()
-    {
+    {   //get spaceship rigibody
+        spaceship = gameManager.spaceship.GetComponent<Rigidbody>();
+        //
         forwardBackwardTiltMax = 17f;
         originalJoystick = transform.localRotation;
     }
@@ -23,6 +30,8 @@ public class JoystickControll : MonoBehaviour
     {
 
         forwardBackwardTilt = topOfJoystick.rotation.eulerAngles.x;
+        forwardBackwardTiltNormalnized = map(forwardBackwardTilt, 0f,forwardBackwardTiltMax,0f,1f);
+        print(forwardBackwardTiltNormalnized);
         if (forwardBackwardTilt < 355 && forwardBackwardTilt > 290)
         {
             forwardBackwardTilt = Math.Abs(forwardBackwardTilt - 360);
@@ -33,6 +42,7 @@ public class JoystickControll : MonoBehaviour
         {
             Debug.Log("Forward" + forwardBackwardTilt);
             //Move something using forwardBackwardTilt as speed
+
         }
         if(forwardBackwardTilt > forwardBackwardTiltMax && forwardBackwardTilt < 74)
         {
@@ -71,5 +81,11 @@ public class JoystickControll : MonoBehaviour
             transform.localRotation = originalJoystick;
             //Debug.Log("exit");
         }
+    }
+
+    //Remap range
+    float map(float s, float a1, float a2, float b1, float b2)
+    {
+        return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
     }
 }
