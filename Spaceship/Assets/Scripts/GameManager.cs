@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject spaceship;
-    
+    public float spaceshipMovementSpeed;
     //[SerializeField] JoystickControll Joystick;
     // Start is called before the first frame update
     
