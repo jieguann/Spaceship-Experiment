@@ -15,10 +15,12 @@ public class JoystickControll : MonoBehaviour
     
     public float forwardBackwardTilt = 0;
     private float forwardBackwardTiltNormalnized;
+    
 
     [SerializeField]
     private float sideToSideTilt = 0;
-    
+    private float sideToSideTiltNormalnized;
+
     private void Start()
     {   //get spaceship rigibody
         spaceship = gameManager.spaceship.GetComponent<Transform>();
@@ -68,18 +70,25 @@ public class JoystickControll : MonoBehaviour
         if (sideToSideTilt < 355 && sideToSideTilt > 290)
         {
             sideToSideTilt = Math.Abs(sideToSideTilt - 360);
+            sideToSideTiltNormalnized = map(sideToSideTilt, 0f, TiltMax, 0f, 1f);
             //Debug.Log("Right" + sideToSideTilt);
             //Turn something using sideToSideTilt as speed
         }
         else if (sideToSideTilt > 5 && sideToSideTilt < 74)
         {
+            sideToSideTiltNormalnized = -map(sideToSideTilt, 0f, TiltMax, 0f, 1f);
             //Debug.Log("Left" + sideToSideTilt);
             //Turn something using sideToSideTilt as speed
         }
 
+        if(canRotate == true)
+        {
+            spaceship.Rotate(0, sideToSideTiltNormalnized * Time.deltaTime * gameManager.spaceshipMovementSpeed, 0);
+        }
 
 
-        if (forwardBackwardTilt > TiltMax && forwardBackwardTilt < 74 && sideToSideTilt > TiltMax && sideToSideTilt < 74)
+
+        if (forwardBackwardTilt > TiltMax && forwardBackwardTilt < 74 || sideToSideTilt > TiltMax && sideToSideTilt < 74)
         {
             transform.localRotation = originalJoystick;
             //stop movement
@@ -106,6 +115,7 @@ public class JoystickControll : MonoBehaviour
             //spaceship.velocity = new Vector3(0f,0f,0f);
             //Debug.Log("exit");
             forwardBackwardTiltNormalnized = 0f;
+            sideToSideTiltNormalnized = 0f;
         }
     }
 

@@ -411,7 +411,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1875680725}
   spaceship: {fileID: 0}
-  canMove: 0
+  canMove: 1
+  canRotate: 1
   topOfJoystick: {fileID: 205084292}
   originalJoystick: {x: 0, y: 0, z: 0, w: 0}
   forwardBackwardTilt: 0
@@ -576,6 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spaceship: {fileID: 8696783542080287107}
   spaceshipMovementSpeed: 1
+  spaceshipRotateSpeed: 1
 --- !u!4 &1875680726
 Transform:
   m_ObjectHideFlags: 0

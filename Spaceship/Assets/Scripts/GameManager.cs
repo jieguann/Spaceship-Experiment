@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject spaceship;
     public float spaceshipMovementSpeed;
+    public float spaceshipRotateSpeed;
     //[SerializeField] JoystickControll Joystick;
     // Start is called before the first frame update
-    
+
     void Start()
     {
         
