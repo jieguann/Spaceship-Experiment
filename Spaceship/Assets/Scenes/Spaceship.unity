@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031041633, g: 0.0027301533, b: 0.003306631, a: 1}
+  m_IndirectSpecularColor: {r: 0.120068386, g: 0.10560402, b: 0.1279001, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -437,6 +437,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8696783542080287108}
     m_Modifications:
+    - target: {fileID: 780063870261201873, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 780063871308626354, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36144
+      objectReference: {fileID: 0}
     - target: {fileID: 780063871377291237, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -447,11 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 780063871377291237, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 780063871377291237, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.17
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 780063871377291237, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -484,6 +492,18 @@ PrefabInstance:
     - target: {fileID: 780063871377291243, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
       propertyPath: m_Name
       value: XRRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 780063871852263152, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 912205625299019164, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229392913734628881, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHand
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfce809f9d143b94280bc7027a335f4b, type: 3}
@@ -523,7 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spaceship: {fileID: 8696783542080287107}
   spaceshipMovementSpeed: 1
-  spaceshipRotateSpeed: 1
+  spaceshipRotateSpeed: 360
 --- !u!4 &1875680726
 Transform:
   m_ObjectHideFlags: 0
