@@ -23,7 +23,7 @@ public class JoystickControll : MonoBehaviour
 
     private void Start()
     {   //get spaceship rigibody
-        spaceship = gameManager.spaceship.GetComponent<Transform>();
+        spaceship = gameManager.spaceship.transform;
         //
         TiltMax = 17f;
         originalJoystick = transform.localRotation;
@@ -83,7 +83,7 @@ public class JoystickControll : MonoBehaviour
 
         if(canRotate == true)
         {
-            spaceship.Rotate(0, sideToSideTiltNormalnized * Time.deltaTime * gameManager.spaceshipMovementSpeed, 0);
+            spaceship.Rotate(0, sideToSideTiltNormalnized * Time.deltaTime * gameManager.spaceshipRotateSpeed, 0);
         }
 
 
