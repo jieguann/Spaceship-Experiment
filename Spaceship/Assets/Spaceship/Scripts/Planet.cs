@@ -20,7 +20,8 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(landingButton) && inLandingZone == true)
+        //if (Input.GetButtonDown(landingButton) && inLandingZone == true)
+        if (inLandingZone == true && hasLanded == false)
         {
             if(hasLanded == false)
             {
